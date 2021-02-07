@@ -1,0 +1,147 @@
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Los Formularios</title>
+    </head>
+    <body>
+        <div style="width: 500px;">
+            <h3>Los Formularios</h3>
+            <p>Hata ahora todos los elememtos que hemos visto para la realización de las páginas HTML carecián 
+               de interactividad real con el usuario, ahora, con los formularios veremos como el usuario puede 
+               pedir y ofrecer información</p>
+            <p>Por ejempo, podemos diseñar formularios para que los internautas puedan ingresar sus datos 
+               personales y recibir una denominada información.</p> 
+            <p>Para comprender su funcionamiento imaginemos el típico formulario de papel en el que aparecen 
+               casillas de texto, cuadros de selección, etc.</p>
+            <h3>Introducción</h3>
+            <p>Los formulario pueden introducirse en cualquier parte del documento, es decir, en tablas, dentro
+               de un texto preformateado, etc. evidentemente un formulario puede contener en su interio listas,
+               imagenes, etc.</p>       
+        </div>
+        <div style="width: 500px;">
+            <h3>Declaracion del formulario Form</h3>
+            <p>Los elementos que componen un formulario deben encontrarse entre las etiquetas
+               &lt;Form&gt; y &lt;&#47;Form&gt;</p>
+            <P>Acontinuación, se situarán todas las etiquetas que generaran los botones, entradas de texto,
+               casillas de verificación, listas, etc.</P>
+            <p>veamos los atributos de la etiqueta &lt;Form&gt;</p>
+            <p><b>ACTION</b> Atributo que determina la acción que debe realizarse al pulsar el botón de ejecución</p>
+            <p><b>METHOD</b> Indica en método de transferencia de la información introducida en el formulario.
+            puede emplearse los métodos <b>GET</b> y <b>POST</b>
+        </p> 
+           <form action="http://www.example.com/login.php">
+            <p>Username:
+                <input type="text" name="username" size="15" maxlength="30" />
+            </p>
+            <p>Password:
+                <input type="text" name="password" size="15" maxlength="30" />
+            </p>
+        </form>
+        <form action="http://www.example.com/comments.php">
+            <p>¿Qué te pareció este trabajo?</p>
+            <textarea name="comments" cols="20" rows="4">Ingrese sus comentarios...</textarea>
+        </form>   
+           <form action="http://www.example.com/profile.php">
+                <p>Por favor, seleccione su género de musica favorito:
+                    <br />
+                    <input type="radio" name="genre" value="rock" checked="checked" /> Rock 
+                    <input type="radio" name="genre" value="pop" /> Pop 
+                    <input type="radio" name="genre" value="jazz" /> Jazz 
+                </p>
+                <p>Por favor, seleccione sus servicios de música favoritos:
+                    <br />
+                    <input type="checkbox" name="service" value="intines" checked="checked" /> Itunes 
+                    <input type="checkbox" name="service" value="deezer" /> Deezer 
+                    <input type="checkbox" name="service" value="spotify" /> Spotify 
+                </p>
+                <p>¿En qué dispositivo escuchas música?</p>
+                <select name="devices">
+                    <option value="ipod">Ipod</option>
+                    <option value="radio">Radio</option>
+                    <option value="computer">Computer</option>
+                </select>
+                <p>¿tocas algún instrumentos?
+                    (puede seleccionar más de una opción manteniendo presionada la tecla control)</p>
+                <select name="instruments" size="3" multiple="multiple">
+                    <option value="guitar" selected="selected">Guitar</option>
+                    <option value="drums">Drums</option>
+                    <option value="keyboard" selected="selected">Keyboard</option>
+                    <option value="bass">Bass</option>
+                </select>
+           </form>
+           <form action="http://www.example.com/upload.php" method="post">
+                 <p>sube tu canción en forma MP3:</p>
+                 <input type="file" name="user-song" /><br />
+                 <input type="submit" value="upload" />
+        </form>
+           <form action="http://www.example.com/subscribe.php">
+                <p>suscríbete a nuestra lista de correo electrónico:</p>
+                <input type="text" name="email" />
+                <input type="submit" name="subscribe" value="subscribe" />
+                <br />
+                <input type="text" name="email" />
+                <input type="image" src="imagenes/subscribe1.png" width="100" height="20" />
+        </form>
+            <form action="http://www.example.com/subscribe.php">
+                <label> Edad: <input type="text" name="age" /></label> 
+                <br />
+                Genero:
+                <input id="female" type="radio" name="gender" value="f">
+                <label for="female">Female</label>
+                <input ide="male" type="radio" name="gender" value="f">
+                <label for="male">Male</label> 
+            </form>
+            <form action="http://www.example.com/subscribe.php">
+                <fieldset>
+                    <legend>Datos de contacto</legend>
+                    <label>Email:<br /><input type="text" name="email"/></label><br />
+                    <label>Telefono Movil:<br /><input type="text" name="mobile" /></label><br />
+                    <label>Telefono Fijo:<br /><input type="text" name="telephone" /></label>
+                </fieldset>
+            </form>
+            <form action="http://www.example.com/login/" method="post">
+                 <label for="username">Username:</label>
+                 <input type="text" name="username" id="username" required="required" /><br />
+                 <label for="password">Password:</label>
+                 <input type="password" name="password" id="password" required="required" />
+                 <input type="submit" value="submit" />
+            </form>
+            <form action="http://www.example.com/bookings/" method="post">
+                <label for="username">Fecha de salida:</label>
+                <input type="date" name="depart" />
+                <input type="submit" value="submit" />
+            </form>
+            <form action="http://www.example.com/subscribe.php">
+                <fieldset>
+                    <legend>Sus Datos:</legend>
+                    <label>Nombre:<input type="text" name="nombre" /></label>
+                    <br />
+                    <label>Email:<input type="text" name="email" /></label>
+                </fieldset>
+                <br />
+                <fieldset>
+                    <legend>Su opinión</legend>
+                    <p>
+                        ¿como se enteraron de nosotros?
+                        <select name="devices">
+                            <option value="google">Google</option>
+                        </select>
+                    </p>
+                    <p>¿Volveria a Visitarnos?
+                    <br />
+                    <input type="radio" name="genre" value="si"/>Si 
+                    <input type="radio" name="genre" value="no"/>No  
+                    <input type="radio" name="genre" value="quizas"/>Quizas
+                </p>
+                <p>Coentarios:</p>
+                <textarea name="comments" cols="20" rows="4"></textarea>
+                <p>
+                    <input type="checkbox" name="service" value="inscribete" checked="checked"/>Inscribete para actualizaciones por correo electrónico
+                    <br />
+                    <input type="submit" name="submit review" value="submit review"/>
+                </p>
+                </fieldset>
+            </form>
+        </div>
+    </body>
+</html>
